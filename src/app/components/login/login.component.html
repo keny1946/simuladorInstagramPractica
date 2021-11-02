@@ -1,0 +1,47 @@
+<br>
+<br>
+<div class="container animated fadeIn">
+  <div class="row">
+    <div class="col-5">
+      <img src="../../../assets/img/fondoInicio.jpg" class="img-thumbnail" alt="..." style="width: 100%; height: 70%;">
+    </div>
+    <div class="col-1"></div>
+    <div class="col-5">
+      <br>
+      <br>
+      <form novalidate action="" [formGroup]="login" (ngSubmit)="log()">
+        <div class="text-center">
+
+          <img src="../../../assets/img/instagram.png" alt="" class="img-fluid" style="width: 50%;">
+        </div>
+        <div class="form-group">
+          <br>
+          <input type="text" id="email" placeholder="Correo Electronico" class="form-control" formControlName="email">
+          <br>
+          <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+            <span class="alert text-danger" *ngIf="f.email.errors?.required"><strong>Se requiere llenar el campo email</strong> </span>
+            <span class="alert text-danger" *ngIf="f.email.errors?.email"><strong>Formato de correo eletronico incorrecto</strong> </span>
+          </div>
+          <br>
+          <input type="password" placeholder="Contraseña" class="form-control" formControlName="password">
+          <div *ngIf="f.password.touched && f.password.invalid" class="alert alert-danger">
+            <span class="alert text-danger" *ngIf="f.password.errors?.required"><strong>Se requiere la contraseña</strong> </span>
+            <span class="alert text-danger" *ngIf="f.password.errors?.minlength"><strong>La contraseña debe ser mayor a 5 digitos</strong></span>
+          </div>
+          <br>
+          <div class="position-relative text-center">
+
+            <button type="submit" class="btn btn-block btn-outline-dark" [disabled]="login.invalid">Iniciar Sesion</button>
+          </div>
+        </div>
+      </form>
+      <hr>
+      <div id="form">
+        <div class="text-center">
+          <p>¿No tienes cuenta?</p><a href="" routerLink="/register">Registrate</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

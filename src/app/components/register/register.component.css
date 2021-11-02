@@ -1,0 +1,17 @@
+form{
+  background-color: white;
+  border: solid;
+  border-color: #dedfe0;
+  border-width: thin;
+  padding: 2em;
+}
+#form{
+  background-color: white;
+  border: solid;
+  border-color: #dedfe0;
+  border-width: thin;
+  padding: 2em;
+}
+#alert{
+  margin: 1em;
+}

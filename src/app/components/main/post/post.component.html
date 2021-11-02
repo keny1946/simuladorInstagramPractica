@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4"></div>
+    <div *ngFor="let post of post; let i = index" class="col-4" id="box">
+      <div class="col-12">
+        <label for="">{{post.nameUser}}</label>
+      </div>
+      <hr>
+      <div class="col-12">
+        <label for="">{{post.namePost}}</label>
+      </div>
+      <div class="col-12">
+        <img [src]="post.image" [alt]="post.image" class="rounded mx-auto d-block">
+      </div>
+    </div>
+    <div class="col-4"></div>
+  </div>
+</div>

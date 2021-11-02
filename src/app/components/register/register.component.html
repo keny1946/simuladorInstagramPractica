@@ -1,0 +1,82 @@
+<br>
+<div class="container animated fadeIn">
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-5" id="form">
+      <div class="text-center">
+        <img src="../../../assets/img/instagram.png" alt="" class="img-fluid" style="width: 50%;">
+        <hr>
+        <form action="" [formGroup]="register" (ngSubmit)="log()" novalidate>
+          <div class="form-group">
+            <input type="text" placeholder="Numero Celular" formControlName="numberCellphone" class="form-control">
+            <div id="alert" *ngIf="f.numberCellphone.touched && f.numberCellphone.invalid" class="alert alert-danger">
+              <span *ngIf="f.numberCellphone.errors?.required" class="alert text-danger">
+                <strong>Se debe de llenar el campo Numero de Celular</strong>
+              </span>
+              <span *ngIf="f.numberCellphone.errors?.maxlength" class="alert text-danger">
+                <strong>El numero celular no debe ser mayor a 10</strong>
+              </span>
+              <span *ngIf="f.numberCellphone.errors?.minlength" class="alert text-danger">
+                <strong>El numero celular no debe ser minimo a 5</strong>
+              </span>
+
+            </div>
+          </div>
+          <br>
+          <div class="form-group">
+            <input type="text" placeholder="Nombre Completo" formControlName="fullName" class="form-control">
+            <div id="alert" *ngIf="f.fullName.touched && f.fullName.invalid" class="alert alert-danger">
+              <span *ngIf="f.fullName.errors?.required" class="alert text-danger">
+                <strong>Se debe de llenar el campo Nombre Completo</strong>
+              </span>
+            </div>
+          </div>
+          <br>
+          <div class="form-group">
+            <input type="text" placeholder="Correo Electronico" formControlName="email" class="form-control">
+            <div id="alert" *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+              <span *ngIf="f.email.errors?.required" class="alert text-danger">
+                <strong>Se debe de llenar el campo Correo Electronico</strong>
+              </span>
+              <span *ngIf="f.email.errors?.email" class="alert text-danger">
+                <strong>Formato Correo Electronico incorrecto</strong>
+              </span>
+            </div>
+          </div>
+          <br>
+          <div class="form-group">
+            <input type="text" placeholder="Nombre de Usuario" formControlName="nameUser" class="form-control">
+            <div id="alert" *ngIf="f.nameUser.touched && f.nameUser.invalid" class="alert alert-danger">
+              <span *ngIf="f.nameUser.errors?.required" class="alert text-danger">
+                <strong>Se debe de llenar el campo Nombre Usuario </strong>
+              </span>
+            </div>
+          </div>
+          <br>
+          <div class="form-group">
+            <input type="password" placeholder="Contraseña" formControlName="password" class="form-control">
+            <div id="alert" *ngIf="f.password.touched && f.password.invalid" class="alert alert-danger">
+              <span *ngIf="f.password.errors?.required" class="alert text-danger">
+                <strong>Se debe de llenar el campo Contraseña</strong>
+              </span>
+              <span *ngIf="f.password.errors?.minlength" class="alert text-danger">
+                <strong>La contraseña debe ser mayor a 5 digitos</strong>
+              </span>
+            </div>
+          </div>
+          <br>
+          <div class="form-group">
+            <div class="d-grid gap-2 col-8 mx-auto">
+              <button type="submit" class="btn btn-block btn-outline-dark">Registrar</button>
+            </div>
+          </div>
+        </form>
+        <br>
+        <form action="">
+          <p>Tienes cuenta <a href="" routerLink="/login">Inicio Sesion</a></p>
+        </form>
+      </div>
+    </div>
+    <div class="col-3"></div>
+  </div>
+</div>
